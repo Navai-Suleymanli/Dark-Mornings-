@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LightIntensity : MonoBehaviour
+{
+    Light myLight;
+
+    public float fastYanma;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        myLight = GetComponent<Light>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        myLight.intensity = Mathf.PingPong(Time.time * fastYanma, 2);
+    }
+}
